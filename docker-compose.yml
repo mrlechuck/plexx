@@ -4,6 +4,7 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
+    network_mode: host
     environment:
       - PUID=0
       - PGID=0
@@ -14,8 +15,6 @@ services:
         - ./config/plex:/config
         - '${SERIES_PATH}:/tv'
         - '${MOVIES_PATH}:/movies'
-    ports:
-      - 32400:32400
     restart: unless-stopped
   overseerr:
     image: sctx/overseerr:latest

@@ -70,7 +70,7 @@ Configure Radarr and Sonarr
 ### <span style="color:CornflowerBlue">qBittorent</span> > hostname:8080
 ##### Torrent Client
 ```
-Set download folder to /downloads
+Set rrs seed (optional)
 ```
 ### <span style="color:Goldenrod">Plex</span> > hostname:32400
 ##### Media Player
