@@ -1,6 +1,6 @@
-# Plexx
+# <span style="color:orange; font-size:40px">Plexx</span>
 #### Watch, request and download media automatically
-### Services
+## <span style="color:MediumAquamarine">Services</span>
 
 - Plex Media Server
 - Overseerr
@@ -9,7 +9,7 @@
 - Sonarr
 - qBittorrent
 
-### Install
+## <span style="color:LightSeaGreen">Install</span>
 ```
 compile .env
 with yours download, movies and series path folder
@@ -19,20 +19,20 @@ RUN
 docker-compose up -d
 ```
 
-### Linux only
+### <span style="color:SlateGray">Linux only</span>
 #### for external drivers it may be required
 ```bash
 lsblk #for list external usb devices
 mount /dev/{YOUR_DEV_NAME} /media/root/folder 
 ```
 
-### Configure
-### Jackett > hostname:9117
+## <span style="color:Teal">Configure</span>
+### <span style="color:DarkSeaGreen">Jackett</span> > hostname:9117
 ##### Torrent Indexer Manager
 ```
 Configure Torrent Indexer
 ```
-### Radarr > hostname:7878
+### <span style="color:DarkKhaki">Radarr</span> > hostname:7878
 ##### Monitoring and Download Requested Overseerr Movies
 ```
 Add Jackett Indexer
@@ -47,7 +47,7 @@ Set Movies Profile and preferred lenguages
 ```
 Set qBittorrent as Torrent Client
 ```
-### Sonarr > hostname:8989
+### <span style="color:CadetBlue">Sonarr</span> > hostname:8989
 ##### Monitoring and Download Requested Overseerr Series 
 ```
 Add Jackett Indexer
@@ -62,24 +62,24 @@ Set Series Profile and preferred lenguages
 ```
 Set qBittorrent as Torrent Client
 ```
-### Overseerr > hostname:5055
+### <span style="color:SlateBlue">Overseerr</span> > hostname:5055
 ##### Search and Request Media to Radarr and Sonarr
 ```
 Configure Radarr and Sonarr 
 ```
-### qBittorent > hostname:8080
+### <span style="color:CornflowerBlue">qBittorent</span> > hostname:8080
 ##### Torrent Client
 ```
 Set download folder to /downloads
 ```
-### Plex > hostname:32400
+### <span style="color:Goldenrod">Plex</span> > hostname:32400
 ##### Media Player
 ```
 Add Movies and Series Libraries
 Movies > /movies
 Series > /tv
 ```
-### Open Router Ports
+## <span style="color:RoyalBlue">Open Router Ports</span>
 - Jackett: 9117
 - Radarr: 7878
 - Sonarr: 8989
