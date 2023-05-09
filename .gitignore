@@ -1,5 +1,7 @@
 .DS_Store
 Thumbs.db
 /Icon*
-/.idea
 *config
+/.idea
+/.vscode
+.env

@@ -10,10 +10,9 @@
 - qBittorrent
 
 ## <span style="color:LightSeaGreen">Install</span>
-```
-compile .env
-with yours download, movies and series path folder
-```
+- rename .env.example to .env
+- compile .env with yours download, movies and series path folder
+
 ```bash
 RUN
 docker-compose up -d
