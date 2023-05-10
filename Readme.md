@@ -69,6 +69,9 @@ Configure Radarr and Sonarr
 ### <span style="color:CornflowerBlue">qBittorent</span> > hostname:8080
 ##### Torrent Client
 ```
+Set incomplete download path to /incomplete
+```
+```
 Set rrs feed (optional)
 ```
 ### <span style="color:Goldenrod">Plex</span> > hostname:32400

@@ -81,6 +81,7 @@ services:
     volumes:
         - ./config/qbittorrent:/config
         - '${DOWNLOAD_PATH}:/downloads'
+        - '${TEMP_DOWNLOAD_PATH}:/incomplete'
     ports:
       - 8080:8080
       - 6881:6881
