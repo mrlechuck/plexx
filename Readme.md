@@ -11,7 +11,7 @@
 
 ## <span style="color:LightSeaGreen">Install</span>
 - rename .env.example to .env
-- compile .env with yours download, movies and series path folder
+- compile .env with yours folders paths
 
 ```bash
 RUN
