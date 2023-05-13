@@ -80,6 +80,7 @@ services:
       - WEBUI_PORT=8080
     volumes:
         - ./config/qbittorrent:/config
+        - ./qbitt-ui:/qbitt-ui
         - '${DOWNLOAD_PATH}:/downloads'
         - '${TEMP_DOWNLOAD_PATH}:/incomplete'
     ports:

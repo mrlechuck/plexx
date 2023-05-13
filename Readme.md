@@ -72,7 +72,12 @@ Configure Radarr and Sonarr
 Set incomplete download path to /incomplete
 ```
 ```
-Set rrs feed (optional)
+Optional:
+• Set alternative UI:
+    - /qbitt-ui/vuetorrent
+    - /qbitt-ui/mat-unix
+
+• Set rrs feed
 ```
 ### <span style="color:Goldenrod">Plex</span> > hostname:32400
 ##### Media Player
