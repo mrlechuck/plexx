@@ -35,7 +35,8 @@ Configure Torrent Indexer
 ### <span style="color:Green">Flaresolverr</span> > hostname:8191
 ##### Proxy server to bypass Cloudflare protection
 ```
-No action needed
+Set FlareSolverr API URL into Jackett Configuration
+Example: http://hostname:8191
 ```
 ### <span style="color:DarkKhaki">Radarr</span> > hostname:7878
 ##### Monitoring and Download Requested Overseerr Movies
