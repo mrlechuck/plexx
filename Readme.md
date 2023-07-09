@@ -5,6 +5,7 @@
 - Plex Media Server
 - Overseerr
 - Jackett
+- Flaresolverr
 - Radarr
 - Sonarr
 - qBittorrent
@@ -30,6 +31,11 @@ mount /dev/{YOUR_DEV_NAME} /media/root/folder
 ##### Torrent Indexer Manager
 ```
 Configure Torrent Indexer
+```
+### <span style="color:Green">Flaresolverr</span> > hostname:8191
+##### Proxy server to bypass Cloudflare protection
+```
+No action needed
 ```
 ### <span style="color:DarkKhaki">Radarr</span> > hostname:7878
 ##### Monitoring and Download Requested Overseerr Movies
@@ -86,8 +92,9 @@ Add Movies and Series Libraries
 Movies > /movies
 Series > /tv
 ```
-## <span style="color:RoyalBlue">Open Router Ports</span>
+## <span style="color:RoyalBlue">Open Router Ports (Optional)</span>
 - Jackett: 9117
+- Flaresolverr: 8191
 - Radarr: 7878
 - Sonarr: 8989
 - Overseerr: 5055
