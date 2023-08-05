@@ -60,8 +60,8 @@ services:
     image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
     environment:
-      - PUID=501
-      - PGID=501
+      - PUID=0
+      - PGID=0
       - TZ=Etc/UTC
       - AUTO_UPDATE=true
     volumes:
@@ -85,8 +85,8 @@ services:
       image: lscr.io/linuxserver/tautulli:latest
       container_name: tautulli
       environment:
-        - PUID=1000
-        - PGID=1000
+        - PUID=0
+        - PGID=0
         - TZ=Etc/UTC
       volumes:
         - ./config/tautulli:/config
