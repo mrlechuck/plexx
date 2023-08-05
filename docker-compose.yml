@@ -81,6 +81,18 @@ services:
       ports:
         - 8191:8191
       restart: unless-stopped
+  tautulli:
+      image: lscr.io/linuxserver/tautulli:latest
+      container_name: tautulli
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Etc/UTC
+      volumes:
+        - ./config/tautulli:/config
+      ports:
+        - 8181:8181
+      restart: unless-stopped
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent

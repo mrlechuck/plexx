@@ -3,6 +3,7 @@
 ## <span style="color:MediumAquamarine">Services</span>
 
 - Plex Media Server
+- Tautulli
 - Overseerr
 - Jackett
 - Flaresolverr
@@ -93,6 +94,10 @@ Add Movies and Series Libraries
 Movies > /movies
 Series > /tv
 ```
+### <span style="color:Cyan">Tautulli</span> > hostname:8181
+##### Plex Activity Monitor
+```
+```
 ## <span style="color:RoyalBlue">Open Router Ports (Optional)</span>
 - Jackett: 9117
 - Flaresolverr: 8191
@@ -102,3 +107,4 @@ Series > /tv
 - qBittorrent: 8080
 - qBittorrent: 6881
 - Plex: 32400
+- Tautulli: 8181
