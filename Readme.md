@@ -97,7 +97,12 @@ Series > /tv
 ### <span style="color:Cyan">Tautulli</span> > hostname:8181
 ##### Plex Activity Monitor
 ```
+• Open Tautulli in your Browser (hostname:8181)
+• Follow Quickstart Configuration 
+• Configure Tautulli in Overseerr (Settings > Plex)
 ```
+<i>You can find Tautulli <b>API Key</b> in Tautulli > Settings > Web Interface</i>
+
 ## <span style="color:RoyalBlue">Open Router Ports (Optional)</span>
 - Jackett: 9117
 - Flaresolverr: 8191
