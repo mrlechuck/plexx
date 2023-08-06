@@ -77,10 +77,18 @@ Configure Radarr and Sonarr
 ### <span style="color:CornflowerBlue">qBittorent</span> > hostname:8080
 ##### Torrent Client
 ```
-Set incomplete download path to /incomplete
+[Nerd Only]
+
+• Set network interface and IP binding
+  - Settings > Advanced > Network interface (sample: eth0)
+  - Settings > Advanced > Optional IP to bind (sample: All IPv4 addresses)
 ```
 ```
-Optional:
+[Optional]
+
+• Set path for incomplete downloads to /incomplete
+  in Settings > Downloads
+  
 • Set alternative UI:
     - /qbitt-ui/vuetorrent
     - /qbitt-ui/mat-unix
