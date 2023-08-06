@@ -14,16 +14,16 @@
 ## <span style="color:LightSeaGreen">Install</span>
 - rename .env.example to .env
 - compile .env with yours folders paths
+- run the command below in the root folder
 
 ```bash
-RUN
-docker-compose up -d
+docker compose up -d
 ```
 
 ### <span style="color:SlateGray">Linux only</span>
 #### for external drivers it may be required
 ```bash
-lsblk #for list external usb devices
+lsblk #list external usb devices
 mount /dev/{YOUR_DEV_NAME} /media/root/folder 
 ```
 
@@ -121,3 +121,11 @@ Series > /tv
 - qBittorrent: 6881
 - Plex: 32400
 - Tautulli: 8181
+
+## <span style="color:#ff1269">Service Update Reference</span>
+Run the command below in the root folder
+```bash
+docker compose down
+docker compose pull
+docker compose up -d
+```
