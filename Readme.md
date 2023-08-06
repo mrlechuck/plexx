@@ -1,15 +1,15 @@
 # <span style="color:orange; font-size:40px">Plexx</span>
-#### Watch, request and download media automatically
-## <span style="color:MediumAquamarine">Services</span>
+#### Request your media and the ecosystem will find and download it for you
 
-- Plex Media Server
-- Tautulli
-- Overseerr
-- Jackett
-- Flaresolverr
-- Radarr
-- Sonarr
-- qBittorrent
+## <span style="color:MediumAquamarine">Services</span>
+- Plex Media Server (Media Library)
+- Tautulli (Plex Users Activity Monitor)
+- Overseerr (Media Catalog to Search and Request Media)
+- Jackett (Torrent Indexer Manager)
+- Flaresolverr (Proxy Server to Bypass Cloudflare Protection)
+- Radarr (Monitoring and Download Requested Overseerr Movies)
+- Sonarr (Monitoring and Download Requested Overseerr Series)
+- qBittorrent (Torrent Client)
 
 ## <span style="color:LightSeaGreen">Install</span>
 - rename .env.example to .env
@@ -70,7 +70,7 @@ Set Series Profile and preferred lenguages
 Set qBittorrent as Torrent Client
 ```
 ### <span style="color:SlateBlue">Overseerr</span> > hostname:5055
-##### Search and Request Media to Radarr and Sonarr
+##### Media Catalog to Search and Request Media with Radarr and Sonarr
 ```
 Configure Radarr and Sonarr 
 ```
@@ -96,7 +96,7 @@ Configure Radarr and Sonarr
 • Set rrs feed
 ```
 ### <span style="color:Goldenrod">Plex</span> > hostname:32400
-##### Media Player
+##### Media Library
 ```
 Add Movies and Series Libraries
 Movies > /movies
