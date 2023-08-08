@@ -111,7 +111,9 @@ Series > /tv
 ```
 <i>You can find Tautulli <b>API Key</b> in Tautulli > Settings > Web Interface</i>
 
-## <span style="color:RoyalBlue">Open Router Ports (Optional)</span>
+## <span style="color:Gold">Optional</span>
+
+### <span style="color:RoyalBlue">Open Router Ports</span>
 - Jackett: 9117
 - Flaresolverr: 8191
 - Radarr: 7878
@@ -121,6 +123,42 @@ Series > /tv
 - qBittorrent: 6881
 - Plex: 32400
 - Tautulli: 8181
+
+
+### <span style="color:#ff6f7f">Install MegaTools (Only Linux Users)</span>
+Megatools is a collection of programs for accessing the Mega.nz service from the command line
+#### Install megatools package
+```bash
+apt install megatools
+```
+#### Create ~/.megarc and enter your mega.nz credentials
+```
+[Login]
+Username = your@email
+Password = yourpassword
+```
+Now you can run the <b>script</b> located in the <b>shell folder</b> to download a movie<br>
+from mega.nz directly to your Plex library
+
+#### Example below:
+```
+./shell/mega_to_radarr.sh 
+
+Enter the Movie Title:
+My movie title
+
+Enter the Movie Release Year:
+1985
+
+Enter MEGA Movie Link:
+https://mega.nz/file/XXXXXX#XXXXXXXX
+
+Downloaded My.movie.title.mkv
+
+Enjoy 😜
+
+```
+
 
 ## <span style="color:#ff1269">Service Update Reference</span>
 Run the command below in the root folder
