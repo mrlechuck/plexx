@@ -16,7 +16,7 @@ MOVIE_DIR="${MOVIES_PATH}/${MOVIE_TITLE} (${MOVIE_YEAR})"
 mkdir "${MOVIE_DIR}"
 cd "${MOVIE_DIR}" || exit
 
-#Download media
+#Download movie
 megadl "${MOVIE_URL}"
 
 echo "Enjoy 😜"
