@@ -1,5 +1,5 @@
 #Get project env
-source .env
+source ../.env
 
 #Get movie data from input
 echo "Enter the Movie Title:"
