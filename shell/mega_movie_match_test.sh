@@ -13,7 +13,13 @@ response="$(curl \
   --location 'http://localhost:7878/api/v3/movie/lookup?term='"${term_encoded}" \
   --header 'X-Api-Key: '"${RADARR_API_KEY}")"
 
-#"$(echo ${response} | jq '. | length')"
+total_result="$(echo "${response}" | jq '.')"
+
+for i in $total_result
+do
+   echo "$i"
+done
+
 title="$(echo "${response}" | jq -r '.[0].title')"
 year="($(echo "${response}" | jq -r '.[0].year'))"
 
