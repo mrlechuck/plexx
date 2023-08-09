@@ -2,7 +2,9 @@
 
 source ../.env
 
-term="ritorno al futuro parte"
+#term="ritorno al futuro parte"
+
+term=$1
 
 #URL Encoding Term
 term_encoded=$(printf %s "${term}" | jq -sRr @uri)
