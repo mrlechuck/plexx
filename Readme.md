@@ -137,7 +137,7 @@ apt install megatools
 Username = your@email
 Password = yourpassword
 ```
-Now you can run the <b>script</b> located in the <b>shell folder</b> to download a movie<br>
+Now you can run the <b>script</b> <i>mega_to_radarr.sh</i> located in the <b>shell folder</b> to download a movie<br>
 from mega.nz directly to your Plex library
 
 #### Example below:
