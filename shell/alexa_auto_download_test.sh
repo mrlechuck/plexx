@@ -1,4 +1,4 @@
-#SPERIMENTAL WIP
+#EXPERIMENTAL WIP
 
 source ../.env
 
