@@ -6,8 +6,8 @@ services:
     container_name: plex
     network_mode: host
     environment:
-      - PUID='${UID}'
-      - PGID='${GID}'
+      - PUID=${UID}
+      - PGID=${GID}
       - TZ=Etc/UTC
       - VERSION=docker
       - PLEX_CLAIM= #optional
