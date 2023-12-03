@@ -13,7 +13,10 @@
 
 ## <span style="color:LightSeaGreen">Install</span>
 - rename .env.example to .env
-- compile .env with yours folders paths
+- compile .env with:
+   - user uid and guid (run "<b>id</b>" in the terminal to retrieve information)
+   - folders paths
+   - radarr api key
 - run the command below in the root folder
 
 ```bash

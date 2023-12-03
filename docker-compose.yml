@@ -32,8 +32,8 @@ services:
     image: lscr.io/linuxserver/radarr
     container_name: radarr
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=${UID}
+      - PGID=${GID}
       - TZ=Etc/UTC
     volumes:
         - ./config/radarr:/config
@@ -46,8 +46,8 @@ services:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=${UID}
+      - PGID=${GID}
       - TZ=Etc/UTC
     volumes:
         - ./config/sonarr:/config
@@ -60,8 +60,8 @@ services:
     image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${UID}
+      - PGID=${GID}
       - TZ=Etc/UTC
       - AUTO_UPDATE=true
     volumes:
@@ -85,8 +85,8 @@ services:
       image: lscr.io/linuxserver/tautulli:latest
       container_name: tautulli
       environment:
-        - PUID=0
-        - PGID=0
+        - PUID=${UID}
+        - PGID=${GID}
         - TZ=Etc/UTC
       volumes:
         - ./config/tautulli:/config
@@ -97,8 +97,8 @@ services:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=${UID}
+      - PGID=${GID}
       - TZ=Etc/UTC
       - WEBUI_PORT=8080
     volumes:
