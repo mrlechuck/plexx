@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 
 services:
   plex:
@@ -111,3 +111,10 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
+  telebot:
+    container_name: telebot
+    network_mode: bridge
+    build:
+      context: ./
+      dockerfile: ./telebot/Dockerfile
+    command: sh -c "sleep 2s ; python3 ./source/main.py"
