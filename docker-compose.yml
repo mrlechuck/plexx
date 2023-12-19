@@ -114,6 +114,9 @@ services:
   telebot:
     container_name: telebot
     network_mode: bridge
+    environment:
+      - PUID=${UID}
+      - PGID=${GID}
     build:
       context: ./
       dockerfile: ./telebot/Dockerfile
