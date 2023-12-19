@@ -86,7 +86,7 @@ def search(message):
                 movie_cover = movie_data['remotePoster']
 
                 try:
-                    bot.send_message(message.from_user.id, '-----------------------------------')
+                    bot.send_message(message.from_user.id, '-------------------------------')
                     bot.send_photo(message.from_user.id, str(movie_cover), caption=str('<b>' + movie_info + '</b>'),
                                    parse_mode='HTML', reply_markup=keyboard)
                 except:
