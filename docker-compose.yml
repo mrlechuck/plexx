@@ -51,7 +51,7 @@ services:
       - TZ=Etc/UTC
     volumes:
         - ./config/sonarr:/config
-        - '${SERIES_PATH}:/tv' #optional
+        - '${SERIES_PATH}:/tv'
         - '${DOWNLOAD_PATH}:/downloads'
     ports:
       - 8989:8989
