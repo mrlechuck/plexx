@@ -14,6 +14,7 @@ bot = telebot.TeleBot(API_TOKEN)
 
 RADARR_API_URL = os.getenv('RADARR_API_URL')
 RADARR_API_KEY = os.getenv('RADARR_API_KEY')
+RESULT_LIMIT = 5
 
 command = [
     BotCommand("start", "Start"),
@@ -62,12 +63,14 @@ def check_user_auth(username):
 
 
 def search(message):
-
     url = RADARR_API_URL + '/movie/lookup?term=' + message.text
     headers = {'X-Api-Key': RADARR_API_KEY}
     response = requests.get(url, headers=headers).json()
 
-    if len(response) > 0:
+    total_results = len(response)
+    result_count = 1
+
+    if total_results > 0:
         for movie_data in response:
 
             time.sleep(0.2)
@@ -86,12 +89,16 @@ def search(message):
                 movie_cover = movie_data['remotePoster']
 
                 try:
-                    bot.send_message(message.from_user.id, '-------------------------------')
                     bot.send_photo(message.from_user.id, str(movie_cover), caption=str('<b>' + movie_info + '</b>'),
                                    parse_mode='HTML', reply_markup=keyboard)
                 except:
                     bot.send_message(message.from_user.id, str('<b>' + movie_info + '</b>'),
                                      parse_mode='HTML', reply_markup=keyboard)
+
+            if result_count == RESULT_LIMIT:
+                break
+
+            result_count += 1
     else:
         bot.send_message(message.from_user.id, f'🤦🏼‍No results for "{message.text}"')
         bot.register_next_step_handler(message, search)
