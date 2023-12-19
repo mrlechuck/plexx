@@ -67,8 +67,9 @@ def search(message):
     headers = {'X-Api-Key': RADARR_API_KEY}
     response = requests.get(url, headers=headers).json()
 
-    if len(response) > 0:
-        for movie_data in response:
+    all_result = len(response)
+    if all_result > 0:
+        for index, movie_data in response:
 
             time.sleep(0.2)
 
@@ -86,7 +87,7 @@ def search(message):
                 movie_cover = movie_data['remotePoster']
 
                 try:
-                    bot.send_message(message.from_user.id, '-------------------------------')
+                    bot.send_message(message.from_user.id, f'{str(index)} of {str(all_result)}')
                     bot.send_photo(message.from_user.id, str(movie_cover), caption=str('<b>' + movie_info + '</b>'),
                                    parse_mode='HTML', reply_markup=keyboard)
                 except:
