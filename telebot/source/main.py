@@ -86,7 +86,7 @@ def search(message):
             if 'remotePoster' in movie_data and movie_data['year'] != 0 and movie_data['title'] != '':
 
                 movie_info = movie_data['title'] + " (" + str(movie_data['year']) + ")"
-                movie_reference = "<a href='https://www.themoviedb.org/movie/" + movie_data['tmdbId'] + "'> ℹ️Info</a>"
+                movie_reference = "<a href='https://www.themoviedb.org/movie/" + str(movie_data['tmdbId']) + "'> ℹ️Info</a>"
                 movie_cover = movie_data['remotePoster']
 
                 try:
