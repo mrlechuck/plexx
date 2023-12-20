@@ -121,3 +121,4 @@ services:
       context: ./
       dockerfile: ./telebot/Dockerfile
     command: sh -c "sleep 2s ; python3 ./source/main.py"
+    restart: unless-stopped

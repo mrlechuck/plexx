@@ -86,14 +86,19 @@ def search(message):
             if 'remotePoster' in movie_data and movie_data['year'] != 0 and movie_data['title'] != '':
 
                 movie_info = movie_data['title'] + " (" + str(movie_data['year']) + ")"
+                movie_reference = "<a href='https://www.themoviedb.org/movie/" + movie_data['tmdbId'] + "'> ℹ️Info</a>"
                 movie_cover = movie_data['remotePoster']
 
                 try:
-                    bot.send_photo(message.from_user.id, str(movie_cover), caption=str('<b>' + movie_info + '</b>'),
-                                   parse_mode='HTML', reply_markup=keyboard)
+                    bot.send_photo(message.from_user.id, str(movie_cover),
+                    caption=str('<b>' + movie_info + '</b>' + movie_reference),
+                    parse_mode='HTML',
+                    reply_markup=keyboard)
                 except:
-                    bot.send_message(message.from_user.id, str('<b>' + movie_info + '</b>'),
-                                     parse_mode='HTML', reply_markup=keyboard)
+                    bot.send_message(message.from_user.id,
+                    str('<b>' + movie_info + '</b>' + movie_reference),
+                    parse_mode='HTML',
+                    reply_markup=keyboard)
 
             if result_count == RESULT_LIMIT:
                 break
