@@ -108,17 +108,18 @@ services:
         - '${TEMP_DOWNLOAD_PATH}:/incomplete'
     ports:
       - 8080:8080
+      - 9000:9000
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
-  telebot:
-    container_name: telebot
-    network_mode: bridge
-    environment:
-      - PUID=${UID}
-      - PGID=${GID}
-    build:
-      context: ./
-      dockerfile: ./telebot/Dockerfile
-    command: sh -c "sleep 2s ; python3 ./source/main.py"
-    restart: unless-stopped
+  #telebot:
+  #  container_name: telebot
+  #  network_mode: bridge
+  #  environment:
+  #    - PUID=${UID}
+  #    - PGID=${GID}
+  #  build:
+  #    context: ./
+  #    dockerfile: ./telebot/Dockerfile
+  #  command: sh -c "sleep 2s ; python3 ./source/main.py"
+  #  restart: unless-stopped
