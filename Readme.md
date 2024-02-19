@@ -115,7 +115,7 @@ Series > /tv
 ```
 <i>You can find Tautulli <b>API Key</b> in Tautulli > Settings > Web Interface</i>
 
-### <span style="color:Pink">Telebot</span>
+### <span style="color:Pink">Telebot (Optional)</span>
 ##### Telegram Bot to Search and Download Movies
 ```
 • Uncomment docker-compose.yml in the telebot service section
