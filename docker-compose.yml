@@ -93,25 +93,24 @@ services:
       ports:
         - 8181:8181
       restart: unless-stopped
-  qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
-    container_name: qbittorrent
-    environment:
-      - PUID=${UID}
-      - PGID=${GID}
-      - TZ=Etc/UTC
-      - WEBUI_PORT=8080
-    volumes:
-        - ./config/qbittorrent:/config
-        - ./qbitt-ui:/qbitt-ui
+  deluge:
+      image: lscr.io/linuxserver/deluge:latest
+      container_name: deluge
+      environment:
+        - PUID=${UID}
+        - PGID=${GID}
+        - TZ=Etc/UTC
+        - DELUGE_LOGLEVEL=error #optional
+      volumes:
+        - ./config/deluge:/config
         - '${DOWNLOAD_PATH}:/downloads'
         - '${TEMP_DOWNLOAD_PATH}:/incomplete'
-    ports:
-      - 8080:8080
-      - 9000:9000
-      - 6881:6881
-      - 6881:6881/udp
-    restart: unless-stopped
+      ports:
+        - 8112:8112
+        - 6881:6881
+        - 6881:6881/udp
+        - 58846:58846 #optional
+      restart: unless-stopped
   #telebot:
   #  container_name: telebot
   #  network_mode: bridge
