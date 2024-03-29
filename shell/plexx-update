@@ -1,0 +1,47 @@
+#!/bin/bash
+
+cd ..
+
+echo Plexx Modules Current Version
+echo Plex
+docker inspect -f '{{ index .Config.Labels "build_version" }}' plex
+echo Tautulli
+docker inspect -f '{{ index .Config.Labels "build_version" }}' tautulli
+echo Overseerr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' overseerr
+echo Radarr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' radarr
+echo Sonarr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' sonarr
+echo Jackett
+docker inspect -f '{{ index .Config.Labels "build_version" }}' jackett
+echo Flaresolverr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' flaresolverr
+echo qBittorrent
+docker inspect -f '{{ index .Config.Labels "build_version" }}' qbittorrent
+
+echo Docker Down...
+docker compose down
+echo Docker Pulling...
+docker compose pull
+echo Docker Up...
+docker compose up -d
+
+echo Plexx Modules Updated Version
+
+echo Plex
+docker inspect -f '{{ index .Config.Labels "build_version" }}' plex
+echo Tautulli
+docker inspect -f '{{ index .Config.Labels "build_version" }}' tautulli
+echo Overseerr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' overseerr
+echo Radarr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' radarr
+echo Sonarr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' sonarr
+echo Jackett
+docker inspect -f '{{ index .Config.Labels "build_version" }}' jackett
+echo Flaresolverr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' flaresolverr
+echo qBittorrent
+docker inspect -f '{{ index .Config.Labels "build_version" }}' qbittorrent
