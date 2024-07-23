@@ -167,8 +167,9 @@ Now you can run the <b>script</b> <i>mega_to_radarr.sh</i> located in the <b>she
 from mega.nz directly to your Plex library
 
 #### Example below:
-```
-./shell/mega_to_radarr.sh 
+```bash
+cd {/plexx/root/folder}/shell
+./mega_to_radarr.sh 
 
 Enter the Movie Title:
 My movie title
