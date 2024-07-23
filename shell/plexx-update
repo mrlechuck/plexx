@@ -22,8 +22,18 @@ docker inspect -f '{{ index .Config.Labels "build_version" }}' qbittorrent
 
 echo Docker Down...
 docker compose down
+
 echo Docker Pulling...
 docker compose pull
+
+echo Check Dangling Containers, Images And Volumes...
+docker ps -a -f "status=exited"
+docker images -f "dangling=true"
+docker volume ls -f "dangling=true"
+
+echo Clean Dangling Containers, Images And Volumes...
+docker system prune -a -f --volumes
+
 echo Docker Up...
 docker compose up -d
 
