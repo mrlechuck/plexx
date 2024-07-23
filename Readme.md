@@ -32,17 +32,20 @@ mount /dev/{YOUR_DEV_NAME} /media/root/folder
 ```
 
 ## <span style="color:Teal">Configure</span>
+
 ### <span style="color:DarkSeaGreen">Jackett</span> > hostname:9117
 ##### Torrent Indexer Manager
 ```
 Configure Torrent Indexer
 ```
+
 ### <span style="color:Green">Flaresolverr</span> > hostname:8191
 ##### Proxy server to bypass Cloudflare protection
 ```
 Set FlareSolverr API URL into Jackett Configuration
 Example: http://hostname:8191
 ```
+
 ### <span style="color:DarkKhaki">Radarr</span> > hostname:7878
 ##### Monitoring and Download Requested Overseerr Movies
 ```
@@ -58,6 +61,7 @@ Set Movies Profile and preferred lenguages
 ```
 Set qBittorrent as Torrent Client
 ```
+
 ### <span style="color:CadetBlue">Sonarr</span> > hostname:8989
 ##### Monitoring and Download Requested Overseerr Series 
 ```
@@ -73,11 +77,13 @@ Set Series Profile and preferred lenguages
 ```
 Set qBittorrent as Torrent Client
 ```
+
 ### <span style="color:SlateBlue">Overseerr</span> > hostname:5055
 ##### Media Catalog to Search and Request Media with Radarr and Sonarr
 ```
 Configure Radarr and Sonarr 
 ```
+
 ### <span style="color:CornflowerBlue">qBittorent</span> > hostname:8080
 ##### Torrent Client
 ```
@@ -99,6 +105,7 @@ Configure Radarr and Sonarr
 
 • Set rrs feed
 ```
+
 ### <span style="color:Goldenrod">Plex</span> > hostname:32400
 ##### Media Library
 ```
@@ -106,6 +113,7 @@ Add Movies and Series Libraries
 Movies > /movies
 Series > /tv
 ```
+
 ### <span style="color:Cyan">Tautulli</span> > hostname:8181
 ##### Plex Activity Monitor
 ```
@@ -141,13 +149,14 @@ docker compose up -d --no-deps --build telebot
 - Plex: 32400
 - Tautulli: 8181
 
-
 ### <span style="color:#ff6f7f">Install MegaTools (Only Linux Users)</span>
 Megatools is a collection of programs for accessing the Mega.nz service from the command line
+
 #### Install megatools package
 ```bash
 apt install megatools
 ```
+
 #### Create ~/.megarc and enter your mega.nz credentials
 ```
 [Login]
@@ -173,17 +182,17 @@ https://mega.nz/file/XXXXXX#XXXXXXXX
 Downloaded My.movie.title.mkv
 
 Enjoy 😜
-
 ```
 
-
 ## <span style="color:#ff1269">Service Update Reference</span>
+
 Run the command below in the root folder
 ```bash
 docker compose down
 docker compose pull
 docker compose up -d
 ```
+
 Alternatively, you can run the update script
 ```bash
 cd {/plexx/root/folder}/shell
