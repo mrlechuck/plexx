@@ -13,12 +13,17 @@
 - Telebot (Plexx Telegram Bot to Search and Download Movies)
 
 ## <span style="color:LightSeaGreen">Install</span>
-- rename .env.example to .env
-- compile .env with:
-   - user uid and guid (run "<b>id</b>" in the terminal to retrieve information)
-   - folders paths
-   - radarr api key
-- run the command below in the root folder
+- Rename <b>.env.example</b> to <b>.env</b>
+- Compile <b>.env</b> with:
+   - User <b>UID</b> and <b>GID</b> (run "<b>id</b>" in the terminal to retrieve information)
+   - <b>MOVIES_PATH</b>
+   - <b>SERIES_PATH</b>
+   - <b>DOWNLOAD_PATH</b>
+   - <b>TEMP_DOWNLOAD_PATH</b>
+   - <b>PLEX_CLAIM</b> (<b>Optional</b>: request from: https://www.plex.tv/claim/)
+   - <b>RADARR_API_KEY</b> (<b>Optional</b>: Get in your <b>Radarr APP Settings > General</b>)
+   - <b>RADARR_API_URL</b> (<b>Optional: Es. http://[radarr-server]:[radarr-port]/api/v3</b> )
+- Run the command below in the project root folder
 
 ```bash
 docker compose up -d
