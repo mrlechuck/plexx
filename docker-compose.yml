@@ -13,6 +13,13 @@ services:
         - ./config/plex:/config
         - '${SERIES_PATH}:/tv'
         - '${MOVIES_PATH}:/movies'
+    devices:
+        - /dev/dri:/dev/dri
+    deploy:
+        resources:
+            limits:
+                cpus: '2.0'
+                memory: 4g
     restart: unless-stopped
   overseerr:
     image: sctx/overseerr:latest
