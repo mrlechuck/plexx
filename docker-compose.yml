@@ -18,8 +18,8 @@ services:
     deploy:
         resources:
             limits:
-                cpus: '2.0'
-                memory: 4g
+                cpus: ${PLEX_CPU_LIMIT}
+                memory: ${PLEX_MEMORY_LIMIT}
     restart: unless-stopped
   overseerr:
     image: sctx/overseerr:latest
