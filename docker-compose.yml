@@ -14,7 +14,7 @@ services:
         - '${SERIES_PATH}:/tv'
         - '${MOVIES_PATH}:/movies'
     devices:
-        - /dev/dri:/dev/dri
+        - '${PLEX_GPU_DEVICE}:${PLEX_GPU_DEVICE}'
     deploy:
         resources:
             limits:
