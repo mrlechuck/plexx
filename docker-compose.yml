@@ -8,13 +8,14 @@ services:
       - PGID=${GID}
       - TZ=Etc/UTC
       - VERSION=docker
+      - LD_LIBRARY_PATH=${PLEX_GPU_LIB}
       - PLEX_CLAIM=${PLEX_CLAIM} #optional request from: https://www.plex.tv/claim/
     volumes:
         - ./config/plex:/config
         - '${SERIES_PATH}:/tv'
         - '${MOVIES_PATH}:/movies'
     devices:
-        - '/dev/dri:/dev/dri'
+        - '${PLEX_GPU_DEVICE}:${PLEX_GPU_DEVICE}'
     deploy:
         resources:
             limits:
