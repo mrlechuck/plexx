@@ -16,11 +16,11 @@ services:
         - '${MOVIES_PATH}:/movies'
     devices:
         - '${PLEX_GPU_DEVICE}:${PLEX_GPU_DEVICE}'
-    deploy:
-        resources:
-            limits:
-                cpus: ${PLEX_CPU_LIMIT}
-                memory: ${PLEX_MEMORY_LIMIT}
+    #deploy:
+    #    resources:
+    #        limits:
+    #            cpus: ${PLEX_CPU_LIMIT}
+    #            memory: ${PLEX_MEMORY_LIMIT}
     restart: unless-stopped
   overseerr:
     image: sctx/overseerr:latest
