@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Get project env
 source ../.env
 

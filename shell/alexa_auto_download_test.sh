@@ -1,4 +1,5 @@
-#EXPERIMENTAL WIP
+#!/bin/bash
+#SPERIMENTAL WIP
 
 source ../.env
 
