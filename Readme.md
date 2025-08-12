@@ -202,5 +202,6 @@ docker compose up -d
 Alternatively, you can run the update script
 ```bash
 cd {/plexx/root/folder}/shell
+./plexx-check-update
 ./plexx-update
 ```
