@@ -35,7 +35,7 @@ services:
         - ./config/seerr:/app/config
     restart: unless-stopped
   radarr:
-    image: lscr.io/linuxserver/radarr
+    image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
       - PUID=${UID}
