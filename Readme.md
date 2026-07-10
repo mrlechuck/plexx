@@ -4,11 +4,11 @@
 ## <span style="color:MediumAquamarine">Services</span>
 - Plex Media Server (Media Library)
 - Tautulli (Plex Users Activity Monitor)
-- Overseerr (Media Catalog to Search and Request Media)
+- Seerr (Media Catalog to Search and Request Media)
 - Jackett (Torrent Indexer Manager)
 - Flaresolverr (Proxy Server to Bypass Cloudflare Protection)
-- Radarr (Monitoring and Download Requested Overseerr Movies)
-- Sonarr (Monitoring and Download Requested Overseerr Series)
+- Radarr (Monitoring and Download Requested Seerr Movies)
+- Sonarr (Monitoring and Download Requested Seerr Series)
 - qBittorrent (Torrent Client)
 - Telebot (Plexx Telegram Bot to Search and Download Movies)
 - Filebrowser (Web File Manager for your Media Root Folder)
@@ -54,7 +54,7 @@ Example: http://hostname:8191
 ```
 
 ### <span style="color:DarkKhaki">Radarr</span> > hostname:7878
-##### Monitoring and Download Requested Overseerr Movies
+##### Monitoring and Download Requested Seerr Movies
 ```
 Add Jackett Indexer
 Indexer > Torznab (custom)
@@ -70,7 +70,7 @@ Set qBittorrent as Torrent Client
 ```
 
 ### <span style="color:CadetBlue">Sonarr</span> > hostname:8989
-##### Monitoring and Download Requested Overseerr Series 
+##### Monitoring and Download Requested Seerr Series 
 ```
 Add Jackett Indexer
 Indexer > Torznab (custom)
@@ -85,7 +85,7 @@ Set Series Profile and preferred lenguages
 Set qBittorrent as Torrent Client
 ```
 
-### <span style="color:SlateBlue">Overseerr</span> > hostname:5055
+### <span style="color:SlateBlue">Seerr</span> > hostname:5055
 ##### Media Catalog to Search and Request Media with Radarr and Sonarr
 ```
 Configure Radarr and Sonarr 
@@ -126,7 +126,7 @@ Series > /tv
 ```
 • Open Tautulli in your Browser (hostname:8181)
 • Follow Quickstart Configuration 
-• Configure Tautulli in Overseerr (Settings > Plex)
+• Configure Tautulli in Seerr (Settings > Plex)
 ```
 <i>You can find Tautulli <b>API Key</b> in Tautulli > Settings > Web Interface</i>
 
@@ -165,7 +165,7 @@ docker compose up -d --no-deps --build telebot
 - Flaresolverr: 8191
 - Radarr: 7878
 - Sonarr: 8989
-- Overseerr: 5055
+- Seerr: 5055
 - qBittorrent: 8080
 - qBittorrent: 6881
 - Plex: 32400

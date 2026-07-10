@@ -7,8 +7,8 @@ echo Plex
 docker inspect -f '{{ index .Config.Labels "build_version" }}' plex
 echo Tautulli
 docker inspect -f '{{ index .Config.Labels "build_version" }}' tautulli
-echo Overseerr
-docker inspect -f '{{ index .Config.Labels "build_version" }}' overseerr
+echo Seerr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' seerr
 echo Radarr
 docker inspect -f '{{ index .Config.Labels "build_version" }}' radarr
 echo Sonarr
@@ -43,8 +43,8 @@ echo Plex
 docker inspect -f '{{ index .Config.Labels "build_version" }}' plex
 echo Tautulli
 docker inspect -f '{{ index .Config.Labels "build_version" }}' tautulli
-echo Overseerr
-docker inspect -f '{{ index .Config.Labels "build_version" }}' overseerr
+echo Seerr
+docker inspect -f '{{ index .Config.Labels "build_version" }}' seerr
 echo Radarr
 docker inspect -f '{{ index .Config.Labels "build_version" }}' radarr
 echo Sonarr
