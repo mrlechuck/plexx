@@ -11,11 +11,13 @@
 - Sonarr (Monitoring and Download Requested Overseerr Series)
 - qBittorrent (Torrent Client)
 - Telebot (Plexx Telegram Bot to Search and Download Movies)
+- Filebrowser (Web File Manager for your Media Root Folder)
 
 ## <span style="color:LightSeaGreen">Install</span>
 - Rename <b>.env.example</b> to <b>.env</b>
 - Compile <b>.env</b> with:
    - User <b>UID</b> and <b>GID</b> (run "<b>id</b>" in the terminal to retrieve information)
+   - <b>DATA_ROOT_PATH</b> (root folder shared with Filebrowser)
    - <b>MOVIES_PATH</b>
    - <b>SERIES_PATH</b>
    - <b>DOWNLOAD_PATH</b>
@@ -128,6 +130,21 @@ Series > /tv
 ```
 <i>You can find Tautulli <b>API Key</b> in Tautulli > Settings > Web Interface</i>
 
+### <span style="color:DarkOrange">Filebrowser</span> > hostname:8090
+##### Web File Manager for your Media Root Folder
+<i>Before the first start, create the config folders in the project root folder:</i>
+```bash
+mkdir -p ./config/filebrowser/database
+mkdir -p ./config/filebrowser/config
+```
+```
+On first start Filebrowser bootstraps its database automatically.
+The username is admin, the password is randomly generated:
+check it in the container logs
+
+docker compose logs filebrowser
+```
+
 ### <span style="color:Pink">Telebot (Optional)</span>
 ##### Telegram Bot to Search and Download Movies
 ```
@@ -153,6 +170,7 @@ docker compose up -d --no-deps --build telebot
 - qBittorrent: 6881
 - Plex: 32400
 - Tautulli: 8181
+- Filebrowser: 8090
 
 ### <span style="color:#ff6f7f">Install MegaTools (Only Linux Users)</span>
 Megatools is a collection of programs for accessing the Mega.nz service from the command line
