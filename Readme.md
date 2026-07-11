@@ -190,6 +190,101 @@ Downloaded My.movie.title.mkv
 Enjoy 😜
 ```
 
+### <span style="color:#8fd3ff">Install Cockpit (Server Web Admin Panel)</span>
+Cockpit is a lightweight web UI to manage the host itself (services, storage, network, updates, metrics) alongside Plexx. Optional, host-level only — it doesn't manage the Plexx stack.
+
+<i>Tested on Debian trixie</i>
+
+#### 1. Cockpit (base)
+```bash
+sudo apt update
+sudo apt install cockpit
+```
+Enable it (socket-activation: starts on-demand on first connection):
+```bash
+sudo systemctl enable --now cockpit.socket
+sudo ss -tlnp | grep :9090     # should be listening
+```
+Access: `https://{your-server}:9090` (self-signed certificate, accept the warning). Login with a non-root system user, then "Turn on administrative access".
+
+Recommended base modules (usually pulled in as dependencies):
+```bash
+sudo apt install cockpit-system cockpit-storaged cockpit-networkmanager cockpit-packagekit
+```
+- `system`: overview, systemd services, logs, terminal
+- `storaged`: disks, partitions, LVM, mounts
+- `networkmanager`: network, firewall
+- `packagekit`: updates and packages
+
+#### 2. Historical metrics (PCP)
+On trixie, the PCP integration is already bundled in `cockpit-bridge` (the separate `cockpit-pcp` package no longer exists). You only need the PCP daemons that record history:
+```bash
+sudo apt install pcp
+sudo systemctl enable --now pmcd pmlogger
+```
+- `pmcd`: collects metrics
+- `pmlogger`: archives them to disk (history starts from now on)
+
+In Cockpit: Overview -> "View metrics and history" -> CPU/RAM/IO graphs.
+
+<i>Note: `pmlogger` writes continuously. Negligible on SSD/NVMe; keep an eye on wear if you're on a microSD. Check disk usage occasionally:</i>
+```bash
+du -sh /var/log/pcp/pmlogger/
+```
+
+#### 3. File browser (cockpit-files)
+`cockpit-files` is not in trixie main, only in trixie-backports (v36). Enable backports and install it targeted:
+```bash
+echo "deb http://deb.debian.org/debian trixie-backports main" \
+  | sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt update
+sudo apt install -t trixie-backports cockpit-files
+```
+The `-t trixie-backports` flag pulls only `files` from backports, leaving the rest of the system on trixie stable. It shows up as "File browser" in the sidebar after a hard-refresh.
+
+<i>Known limits: browses folder-by-folder, sorts by size only INSIDE the current directory. No recursive search or global size sorting. For disk space analysis use `ncdu -x /` from the Terminal.</i>
+
+#### 4. Docker Manager (third-party plugin)
+Official Cockpit doesn't manage Docker (only Podman). This is an external plugin with its own APT repo: manages containers (list/start/stop/restart/logs/terminal) and images. It does **not** manage docker-compose stacks.
+```bash
+echo "deb [trusted=yes arch=all] https://chrisjbawden.github.io/cockpit-dockermanager stable main" \
+  | sudo tee /etc/apt/sources.list.d/cockpit-dockermanager.list
+sudo apt update
+sudo apt install dockermanager
+```
+⚠️ `[trusted=yes]` disables GPG verification for this third-party repo. Safer alternative (manual .deb install):
+```bash
+curl -L -o dockermanager.deb \
+  https://github.com/chrisjbawden/cockpit-dockermanager/releases/download/latest/dockermanager.deb
+sudo dpkg -i dockermanager.deb
+```
+For managing the Plexx docker-compose stack (editing compose, recreating the stack) this plugin isn't enough — use Dockge or Portainer in a separate container instead.
+
+#### Summary (clean install from scratch)
+```bash
+# Cockpit base
+sudo apt update
+sudo apt install cockpit cockpit-system cockpit-storaged \
+                 cockpit-networkmanager cockpit-packagekit
+sudo systemctl enable --now cockpit.socket
+
+# PCP (metrics history)
+sudo apt install pcp
+sudo systemctl enable --now pmcd pmlogger
+
+# File browser (from backports)
+echo "deb http://deb.debian.org/debian trixie-backports main" \
+  | sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt update
+sudo apt install -t trixie-backports cockpit-files
+
+# Docker Manager (third-party plugin)
+echo "deb [trusted=yes arch=all] https://chrisjbawden.github.io/cockpit-dockermanager stable main" \
+  | sudo tee /etc/apt/sources.list.d/cockpit-dockermanager.list
+sudo apt update
+sudo apt install dockermanager
+```
+
 ## <span style="color:#ff1269">Service Update Reference</span>
 
 Run the command below in the root folder
