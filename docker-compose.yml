@@ -118,20 +118,6 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
-  filebrowser:
-    image: filebrowser/filebrowser:s6
-    container_name: filebrowser
-    environment:
-      - PUID=${UID}
-      - PGID=${GID}
-      - TZ=Etc/UTC
-    ports:
-      - "8090:80"
-    volumes:
-      - '${DATA_ROOT_PATH}:/srv'
-      - ./config/filebrowser/database:/database
-      - ./config/filebrowser/config:/config
-    restart: unless-stopped
   #telebot:
   #  container_name: telebot
   #  network_mode: bridge
